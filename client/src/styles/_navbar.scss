@@ -1,0 +1,38 @@
+.container {
+    height: 80px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .buttons {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        column-gap: 32px;
+        color: black;
+        font-weight: 500;
+
+        .cart {
+            display: flex;
+            column-gap: 8px;
+            align-items: center;
+
+            p {
+                margin: 0;
+            }
+            
+            .icon {
+                background-color: gray;
+                height: 30px;
+                width: 30px;
+                border-radius: 15px;
+            }
+        }
+    }
+}

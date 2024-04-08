@@ -1,0 +1,62 @@
+.main {
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+
+  .hero-container {
+    height: 45vh;
+
+    .hero-image {
+      background-image: url("../assets/hero\ \(kopia\).png");
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      border-radius: 48px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .hero-text {
+        color: white;
+
+        h2 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .news-section {
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    p {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .slide-show {
+        height: 75%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        column-gap: 24px;
+
+        .square {
+            background-color: lightgray;
+            height: 100%;
+            aspect-ratio: 1/1;
+            border-radius: 48px;
+        }
+    }
+  }
+}
