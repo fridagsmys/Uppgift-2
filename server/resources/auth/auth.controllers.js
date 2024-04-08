@@ -3,7 +3,7 @@ const fs = require("fs").promises;
 const bcrypt = require("bcrypt");
 
 const register = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { email, password } = req.body;
 
   const users = await fetchUsers();
   const userAlreadyExists = users.find((u) => u.email === email);
@@ -15,7 +15,6 @@ const register = async (req, res) => {
   const hashedPassword = await bcrypt.hash(password, 10);
 
   const newUser = {
-    name,
     email,
     password: hashedPassword,
   };
@@ -35,7 +34,14 @@ const login = async (req, res) => {
     return res.status(400).json("Wrong email or password. Please try again.");
   }
 
-  
+  req.session.user = userExists;
+
+  res.status(200).json(userExists.email);
 };
 
-module.exports = { register, login };
+const logout = (req, res) => {
+  req.session = null;
+  res.status(200).json("You've been logged out");
+};
+
+module.exports = { register, login, logout };
