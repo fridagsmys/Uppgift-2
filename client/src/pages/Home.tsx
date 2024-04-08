@@ -1,15 +1,6 @@
-export const Home = () => {
+import { PayBtn } from "../components/PayBtn";
 
-  const handlePay = async () => {
-    const response = await fetch(
-      "http://localhost:3001/payments/create_checkout_session",
-      {
-        method: "POST",
-      }
-    );
-    const data = await response.json();
-    console.log(data);
-  };
+export const Home = () => {
 
   return (
     <div className="main">
@@ -29,9 +20,7 @@ export const Home = () => {
           <div className="square"></div>
         </div>
       </div>
-      <div className="payment-test">
-        <button onClick={handlePay}>Pay</button>
-      </div>
+      <PayBtn />
     </div>
   );
 };
