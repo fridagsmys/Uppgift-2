@@ -32,31 +32,32 @@
   }
 
   .news-section {
-    height: 25vh;
+    height: 232px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 
     p {
-        margin: 0;
-        font-size: 1.5rem;
-        font-weight: bold;
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
     }
 
     .slide-show {
-        height: 75%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        column-gap: 24px;
+      height: 75%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      column-gap: 24px;
 
-        .square {
-            background-color: lightgray;
-            height: 100%;
-            aspect-ratio: 1/1;
-            border-radius: 48px;
-        }
+      .square {
+        background-color: lightgray;
+        height: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 48px;
+      }
     }
   }
 }

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./pages/Layout";
 import { Home } from "./pages/Home";
 import { Confirmation } from "./pages/Confirmation";
+import { Checkout } from "./pages/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
       {
         path: "/confirmation",
         element: <Confirmation />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />
       }
     ],
   },
