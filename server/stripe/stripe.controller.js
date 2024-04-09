@@ -30,10 +30,14 @@ const verifySession = async (req, res) => {
   const session = await stripe.checkout.sessions.retrieve(sessionId);
 
   if (session.payment_status === "paid") {
+    const lineItems = await stripe.checkout.sessions.listLineItems(sessionId);
+
+    console.log(lineItems);
+
     const order = {
       orderNumber: Math.floor(Math.random() * 100000000),
       customerName: session.customer_details.name,
-      products: "",
+      products: lineItems.data,
       total: session.amount_total,
       date: new Date(),
     };
@@ -44,9 +48,6 @@ const verifySession = async (req, res) => {
 
     res.status(200).json({ verified: true });
   }
-
-  console.log(session);
-  
 };
 
 module.exports = { createCheckoutSession, verifySession };
