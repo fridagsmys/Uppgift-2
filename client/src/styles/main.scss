@@ -1,8 +1,9 @@
 @use "./navbar";
 @use "./home";
 @use "./checkout";
+@use "./productList";
 
 .page-container {
-    width: 80%;
-    margin: auto;
+  width: 80%;
+  margin: auto;
 }

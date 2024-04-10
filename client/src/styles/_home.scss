@@ -23,10 +23,9 @@
 
       .hero-text {
         color: white;
-
-        h2 {
-          margin: 0;
-        }
+        font-size: 2.5rem;
+        font-weight: 300;
+        font-style: italic;
       }
     }
   }
@@ -53,11 +52,38 @@
       column-gap: 24px;
 
       .square {
-        background-color: lightgray;
         height: 100%;
         aspect-ratio: 1/1;
         border-radius: 48px;
       }
+
+      #square-1 {
+        background-image: url("../assets/wickChair.png");
+      }
+      
+      #square-2 {
+        background-image: url("../assets/linenServette.jpg");
+      }
+      
+      #square-3 {
+        background-image: url("../assets/woodCabinet.png");
+      }
+      
+      #square-4 {
+        background-image: url("../assets/hangingArmChair.png");
+      }
+
+      #square-1, #square-2, #square-3, #square-4 {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+
+      #square-1, #square-2, #square-3, #square-4:hover {
+        cursor: pointer;
+      }
+
     }
   }
 }
