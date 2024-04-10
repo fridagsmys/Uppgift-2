@@ -1,4 +1,5 @@
 import { PayBtn } from "../components/PayBtn";
+import { ProductList } from "../components/ProductList";
 
 export const Home = () => {
 
@@ -21,6 +22,7 @@ export const Home = () => {
         </div>
       </div>
       <PayBtn />
+      <ProductList />
     </div>
   );
 };

@@ -3,7 +3,7 @@ const fs = require("fs").promises;
 const bcrypt = require("bcrypt");
 
 const register = async (req, res) => {
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
 
   const users = await fetchUsers();
   const userAlreadyExists = users.find((u) => u.email === email);
@@ -14,10 +14,11 @@ const register = async (req, res) => {
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const newUser = {
+  const newUser = await stripe.customers.create({
+    name,
     email,
     password: hashedPassword,
-  };
+  });
   users.push(newUser);
   await fs.writeFile("./data/users.json", JSON.stringify(users, null, 2));
 
@@ -25,7 +26,7 @@ const register = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { email, password } = req.body;
 
   const users = await fetchUsers();
   const userExists = users.find((u) => u.email === email);

@@ -1,4 +1,4 @@
-const initStripe = require("../stripe.js");
+const initStripe = require("../../stripe.js");
 const fs = require("fs").promises;
 
 const createCheckoutSession = async (req, res) => {

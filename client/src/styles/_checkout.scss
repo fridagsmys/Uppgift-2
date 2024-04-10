@@ -1,5 +1,4 @@
 .checkout-main {
-
   .checkout-container {
     border: 1px solid rgb(212, 212, 212);
     border-radius: 48px;
@@ -12,11 +11,27 @@
     .account {
       width: 30%;
       height: 80%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      row-gap: 24px;
+
+      #register-text {
+        font-weight: 400;
+        font-size: 0.7rem;
+      }
+
+      #register-text:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
 
       .login-container {
         border: 1px solid rgb(212, 212, 212);
         border-radius: 32px;
         height: 100%;
+        width: 100%;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -27,15 +42,10 @@
           font-size: 1.5rem;
         }
 
-        #register-text {
-          font-weight: 400;
-          font-size: 0.7rem;
-        }
-
         .form {
           display: flex;
           flex-direction: column;
-          row-gap: 24px;
+          row-gap: 16px;
           width: 80%;
 
           input {
@@ -48,10 +58,11 @@
         }
 
         button {
-          background-color: transparent;
+          background-color: black;
+          color: white;
           width: 50%;
           height: 32px;
-          border: 1px solid rgb(212, 212, 212);
+          border: 1px solid black;
           border-radius: 16px;
           padding: 0px 16px;
         }
