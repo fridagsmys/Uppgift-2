@@ -5,7 +5,7 @@ const fetchProducts = async (req, res) => {
   const products = await stripe.products.list({
     expand: ["data.default_price"],
   });
-  res.status(200).json(products);
+  res.status(200).json(products.data);
 };
 
 module.exports = { fetchProducts }
