@@ -17,7 +17,7 @@ export interface IProduct {
   };
 }
 
-interface ICartItem {
+export interface ICartItem {
   product: IProduct;
   quantity: number;
 }

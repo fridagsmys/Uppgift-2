@@ -1,7 +1,9 @@
+@use './layout';
 @use "./navbar";
 @use "./home";
 @use "./checkout";
 @use "./productList";
+@use "./cart";
 
 .page-container {
   width: 80%;

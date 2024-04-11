@@ -4,6 +4,7 @@
 import { useState } from "react";
 import { Login } from "../components/Login";
 import { Register } from "../components/Register";
+import { Cart } from "../components/Cart";
 
 export const Checkout = () => {
   const [toggleRegister, setToggleRegister] = useState<boolean>(false);
@@ -29,9 +30,7 @@ export const Checkout = () => {
           )}
         </div>
         <div className="cart-info">
-          <div className="cart-container">
-            <p>Your cart</p>
-          </div>
+          <Cart />
           <button>Proceed to checkout</button>
         </div>
       </div>
