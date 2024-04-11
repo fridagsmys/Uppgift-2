@@ -4,6 +4,7 @@
 @use "./checkout";
 @use "./productList";
 @use "./cart";
+@use './payBtn';
 
 .page-container {
   width: 80%;

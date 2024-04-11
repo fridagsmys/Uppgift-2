@@ -24,9 +24,5 @@ export const PayBtn = () => {
     window.location = data.url;
   };
 
-  return (
-    <div className="payment-test">
-      <button onClick={handlePay}>Pay</button>
-    </div>
-  );
+  return <button onClick={handlePay}>Proceed to checkout</button>;
 };

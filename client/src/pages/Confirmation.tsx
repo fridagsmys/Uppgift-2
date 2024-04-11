@@ -33,6 +33,7 @@ export const Confirmation = () => {
         }
       };
       
+      localStorage.removeItem("cart");
       verifySession();
     }
   }, [verified]);
