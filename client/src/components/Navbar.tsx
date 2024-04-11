@@ -5,7 +5,7 @@ export const Navbar = () => {
 
   return (
     <div className="container">
-      <div className="logo">HAVEN</div>
+      <a className="logo" href="/">HAVEN</a>
       <div className="buttons">
         <a href="/">Home</a>
         <a href="/checkout" className="cart">

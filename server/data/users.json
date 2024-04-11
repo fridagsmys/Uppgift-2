@@ -3,5 +3,33 @@
     "name": "test2",
     "email": "test2@test2.com",
     "password": "$2b$10$KYp1cFSGvaNQFVym7IYMKeJdOb5y7DOFfxee2zhA452ggiUlCA.hq"
+  },
+  {
+    "name": "Pedro pascal",
+    "email": "pedro@pascal.com",
+    "password": "$2b$10$ciuu3SqLfkvQAnftKPZ7jOlZHrBj8W2/ClJI8D5VECJVNo60fGFHe"
+  },
+  {
+    "name": "Misha Cat",
+    "email": "misha@gmail.com",
+    "password": "$2b$10$oGWkVfhe2YDA32FNYeZtge4pcBUuAPI6PRVnkoiv41B4g9XkUpHkq"
+  },
+  {
+    "id": "cus_PuBVv09L0XWzLO",
+    "name": "Lily cat",
+    "email": "lily@gmail.com",
+    "password": "$2b$10$DAv6C4TRkqxGW80ndOFMd.6fpLaLJV3WRGBjR1yGuPvQqo2PP7BBi"
+  },
+  {
+    "id": "cus_PuD6vBjcBTjl0G",
+    "name": "Felix Wetterborg",
+    "email": "felix@gmail.com",
+    "password": "$2b$10$RFneXjgNOyROiZOZSYMEQeZnFyVT1ZGs0q.V34ryS6oN/Y.BJBAHS"
+  },
+  {
+    "id": "cus_PuD6YFDkq6p1B1",
+    "name": "Matilda Ivarsson",
+    "email": "matilda@gmail.com",
+    "password": "$2b$10$7pXdOf.UjGgiwcVvD92huOZgkGPWEYsao3Y5P1ca/vQhdK.XrAWoG"
   }
 ]

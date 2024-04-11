@@ -1,9 +1,12 @@
+const initStripe = require("../../stripe");
 const fetchUsers = require("../../utils/fetchUsers");
 const fs = require("fs").promises;
 const bcrypt = require("bcrypt");
 
 const register = async (req, res) => {
   const { name, email, password } = req.body;
+
+  const stripe = initStripe();
 
   const users = await fetchUsers();
   const userAlreadyExists = users.find((u) => u.email === email);
@@ -14,11 +17,18 @@ const register = async (req, res) => {
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const newUser = await stripe.customers.create({
+  const stripeUser = await stripe.customers.create({
+    name: name,
+    email: email
+  });
+
+  const newUser = {
+    id: stripeUser.id,
     name,
     email,
     password: hashedPassword,
-  });
+  };
+
   users.push(newUser);
   await fs.writeFile("./data/users.json", JSON.stringify(users, null, 2));
 
@@ -37,7 +47,7 @@ const login = async (req, res) => {
 
   req.session.user = userExists;
 
-  res.status(200).json(userExists.email);
+  res.status(200).json(userExists);
 };
 
 const logout = (req, res) => {

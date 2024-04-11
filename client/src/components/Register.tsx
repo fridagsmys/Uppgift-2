@@ -1,11 +1,17 @@
 import axios from "axios";
 import { useState } from "react";
+import { useUserContext } from "../context/UserContext";
+import { LoggedIn } from "./LoggedIn";
 
 export const Register = () => {
+  const { updateData } = useUserContext();
+
   const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const [showForm, setShowForm] = useState<boolean>(true);
 
   const handleRegister = async () => {
     if (confirmPassword === confirmPassword) {
@@ -18,45 +24,59 @@ export const Register = () => {
         "http://localhost:3001/api/auth/register",
         newUserInfo
       );
-      console.log("A new user has been registered");
+      console.log("A new user has been registered:", response);
+
+      const contextData = {
+        id: response.data.id,
+        name: response.data.name,
+        email: response.data.email,
+      };
+
+      updateData(contextData);
+
+      setShowForm(false);
     } else {
-      console.log("Registration failed");
+      console.log("Passwords do not match");
     }
 
-    // Visa att användaren är inloggad.
-    
   };
 
   return (
     <div className="login-container">
-      <p>Register</p>
-      <div className="form">
-        <input
-          type="text"
-          placeholder="Name"
-          value={nameInput}
-          onChange={(e) => setNameInput(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Email"
-          value={emailInput}
-          onChange={(e) => setEmailInput(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={passwordInput}
-          onChange={(e) => setPasswordInput(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Confirm password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-        />
-      </div>
-      <button onClick={handleRegister}>Register</button>
+      {showForm ? (
+        <>
+          <p>Register</p>
+          <div className="form">
+            <input
+              type="text"
+              placeholder="Name"
+              value={nameInput}
+              onChange={(e) => setNameInput(e.target.value)}
+            />
+            <input
+              type="text"
+              placeholder="Email"
+              value={emailInput}
+              onChange={(e) => setEmailInput(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              value={passwordInput}
+              onChange={(e) => setPasswordInput(e.target.value)}
+            />
+            <input
+              type="password"
+              placeholder="Confirm password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+          </div>
+          <button onClick={handleRegister}>Register</button>
+        </>
+      ) : (
+        <LoggedIn />
+      )}
     </div>
   );
 };
