@@ -1,13 +1,18 @@
+import { useEffect } from "react";
 import { useUserContext } from "../context/UserContext";
 
 export const LoggedIn = () => {
   const { userData } = useUserContext();
 
+  // useEffect(() => {
+  //   localStorage.setItem('user', JSON.stringify(userData))
+  // }, [])
+
   return (
     <div className="logged-in-container">
-      <p>Hello {userData.name}!</p>
+      <p>You are logged in and ready to go, {userData.name}!</p>
       <i>
-        You've got good taste, just a few more steps. Please continue with your
+        And you've got good taste. Please continue with your
         purchase!
       </i>
     </div>

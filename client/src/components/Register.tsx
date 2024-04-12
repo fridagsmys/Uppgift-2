@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUserContext } from "../context/UserContext";
 import { LoggedIn } from "./LoggedIn";
 
 export const Register = () => {
-  const { updateData } = useUserContext();
+  const { userData, updateData } = useUserContext();
 
   const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
@@ -13,8 +13,25 @@ export const Register = () => {
 
   const [showForm, setShowForm] = useState<boolean>(true);
 
+  useEffect(() => {
+    const authorize = async () => {
+      const response = await axios.get(
+        "http://localhost:3001/api/auth/authorize",
+        {
+          withCredentials: true,
+        }
+      );
+
+      if (response.status === 200) {
+        setShowForm(false);
+      }
+    };
+
+    authorize();
+  }, []);
+
   const handleRegister = async () => {
-    if (confirmPassword === confirmPassword) {
+    if (confirmPassword === passwordInput) {
       const newUserInfo = {
         name: nameInput,
         email: emailInput,
@@ -22,7 +39,10 @@ export const Register = () => {
       };
       const response = await axios.post(
         "http://localhost:3001/api/auth/register",
-        newUserInfo
+        newUserInfo,
+        {
+          withCredentials: true,
+        }
       );
       console.log("A new user has been registered:", response);
 
@@ -32,13 +52,14 @@ export const Register = () => {
         email: response.data.email,
       };
 
-      updateData(contextData);
-
-      setShowForm(false);
+      if (response.status === 201) {
+        updateData(contextData);
+        setShowForm(false);
+        localStorage.setItem("user", JSON.stringify(contextData));
+      }
     } else {
       console.log("Passwords do not match");
     }
-
   };
 
   return (

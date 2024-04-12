@@ -37,5 +37,77 @@
     "name": "Frida",
     "email": "frida@gmail.com",
     "password": "$2b$10$5f3wj/70egAYrEn.dSK2SeNChGe0d1Xe46LJL/8orPkAeoHBahw0i"
+  },
+  {
+    "id": "cus_PuZVGn4z1IiDkW",
+    "name": "Joel Alstergren",
+    "email": "joel@gmail.com",
+    "password": "$2b$10$kTB8Ah5RKV4sK1nICx4kPOER9rUmAmg4w4FEH7/7trRGR9.KSUQTS"
+  },
+  {
+    "id": "cus_PuZZuvlxk4KJy7",
+    "name": "Tyson Dog",
+    "email": "tyson@gmail.com",
+    "password": "$2b$10$aovlAXFdqhOVPSRPt9uceuhHJcIXgTcmMdXWgMV6n2t8/Ea5So79u"
+  },
+  {
+    "id": "cus_PuZbt7LLNIRZri",
+    "name": "Testing",
+    "email": "testing@gmail.com",
+    "password": "$2b$10$0NCu1NnOpZauurG5YmYDv.eKcPYXEt.IN8vN45QB1.x.SCFNZ3.S2"
+  },
+  {
+    "id": "cus_PuZfWuwdAgCvP3",
+    "name": "Pepsi Max",
+    "email": "pepsi@gmail.com",
+    "password": "$2b$10$cD2gF/83KkQ3ruUx0Lsnp.C15Cdb6tur3DgKUk9M3XxSViQ.I7s/i"
+  },
+  {
+    "id": "cus_PuZgC3LbLVIjd8",
+    "name": "Max Pepsi",
+    "email": "max@gmail.com",
+    "password": "$2b$10$2DlFp8AjrJ.jn7uF5dm9p.XBHNm0daiP0CG1FakwECZVqsFn37Nba"
+  },
+  {
+    "id": "cus_PuZkvoAJXwd9Ik",
+    "name": "test test",
+    "email": "test3@gmail.com",
+    "password": "$2b$10$VPIjaTrKOfuTNL402q27vuxhSpYhPQQbeDVkpjuNK44fI0X76FDKK"
+  },
+  {
+    "id": "cus_PuZnIEJZItdlTM",
+    "name": "Test Four",
+    "email": "test4@gmail.com",
+    "password": "$2b$10$MBnTK7AQZD3ON16QYZeHLOhLU8ZAwZ6vvIjbjmCKTl7lAVdPa0M5y"
+  },
+  {
+    "id": "cus_PuZoDakEU2X7X1",
+    "name": "Test Five",
+    "email": "test5@gmail.com",
+    "password": "$2b$10$8saM44e7nxiZOq4InyFbAemVfJS0zsRJ4Bw/aHNTyM0YkyWjKRiDS"
+  },
+  {
+    "id": "cus_PuZqMcFPtGcS7T",
+    "name": "asasd",
+    "email": "asdasad@gmail.com",
+    "password": "$2b$10$m0keCGKumKytNOTMIgJB3ePSCSTIglLK6TovfLECWPzC46C0hQFly"
+  },
+  {
+    "id": "cus_PuZtbAV88IaxOO",
+    "name": "One Two",
+    "email": "onetwo@gmail.com",
+    "password": "$2b$10$z9zkmqBrDnlzwcnrqE0NJu7JYraef7mCRt5ny.tH10Ls5weI2cD3m"
+  },
+  {
+    "id": "cus_PuZwAyP3RLILIn",
+    "name": "Two Three",
+    "email": "23@gmail.com",
+    "password": "$2b$10$12qa0m7XBMjU62OgRKdT9.WspjWVGPdCtr6Ff9.TQ/.tsgDtHVJbC"
+  },
+  {
+    "id": "cus_PuaCaDaA4qnfnZ",
+    "name": "Bla",
+    "email": "bla@gmail.com",
+    "password": "$2b$10$usZRdfjJeyTegsApa.ld2elaZ67jXoDEtIyKu4G6/PCYtS8bpL3tm"
   }
 ]

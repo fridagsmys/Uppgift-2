@@ -19,7 +19,7 @@ const register = async (req, res) => {
 
   const stripeUser = await stripe.customers.create({
     name: name,
-    email: email
+    email: email,
   });
 
   const newUser = {
@@ -32,7 +32,9 @@ const register = async (req, res) => {
   users.push(newUser);
   await fs.writeFile("./data/users.json", JSON.stringify(users, null, 2));
 
-  res.status(201).json(newUser.email);
+  req.session.user = newUser;
+
+  res.status(201).json(newUser);
 };
 
 const login = async (req, res) => {
@@ -55,4 +57,13 @@ const logout = (req, res) => {
   res.status(200).json("You've been logged out");
 };
 
-module.exports = { register, login, logout };
+const authorize = (req, res) => {
+  if (!req.session.user) {
+    return res
+      .status(401)
+      .json("Please log in to continue with your purchase.");
+  }
+  res.status(200).json(req.session.user.email);
+};
+
+module.exports = { register, login, logout, authorize };

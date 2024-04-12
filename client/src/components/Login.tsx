@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useUserContext } from "../context/UserContext";
 import { LoggedIn } from "./LoggedIn";
 
@@ -11,6 +11,23 @@ export const Login = () => {
 
   const [showForm, setShowForm] = useState<boolean>(true);
 
+  useEffect(() => {
+    const authorize = async () => {
+      const response = await axios.get(
+        "http://localhost:3001/api/auth/authorize",
+        {
+          withCredentials: true,
+        }
+      );
+
+      if (response.status === 200) {
+        setShowForm(false);
+      }
+    };
+
+    authorize();
+  }, []);
+
   const handleLogin = async () => {
     const user = {
       email: emailInput,
@@ -18,7 +35,10 @@ export const Login = () => {
     };
     const response = await axios.post(
       "http://localhost:3001/api/auth/login",
-      user
+      user,
+      {
+        withCredentials: true,
+      }
     );
     console.log(response);
 
@@ -28,9 +48,11 @@ export const Login = () => {
       email: response.data.email,
     };
 
-    updateData(contextData);
-
-    setShowForm(false);
+    if (response.status === 200) {
+      updateData(contextData);
+      setShowForm(false);
+      localStorage.setItem("user", JSON.stringify(contextData));
+    }
   };
 
   return (
