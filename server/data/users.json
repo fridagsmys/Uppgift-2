@@ -31,5 +31,11 @@
     "name": "Matilda Ivarsson",
     "email": "matilda@gmail.com",
     "password": "$2b$10$7pXdOf.UjGgiwcVvD92huOZgkGPWEYsao3Y5P1ca/vQhdK.XrAWoG"
+  },
+  {
+    "id": "cus_PuIoITAuPUdMu7",
+    "name": "Frida",
+    "email": "frida@gmail.com",
+    "password": "$2b$10$5f3wj/70egAYrEn.dSK2SeNChGe0d1Xe46LJL/8orPkAeoHBahw0i"
   }
 ]

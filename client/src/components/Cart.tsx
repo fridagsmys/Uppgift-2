@@ -5,16 +5,37 @@ export const Cart = () => {
   useCart();
 
   const [cartItems, setCartItems] = useState<ICartItem[]>([]);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
 
   useEffect(() => {
     const LsData = localStorage.getItem("cart");
     if (LsData) {
-      setCartItems(JSON.parse(LsData));
-      console.log(JSON.parse(LsData));
+      const parsedData = JSON.parse(LsData);
+      setCartItems(parsedData);
+      TotalPrice(parsedData);
     } else {
       console.log("Empty local storage");
     }
   }, []);
+
+  const TotalPrice = (items: ICartItem[]) => {
+    let total = 0;
+    items.forEach((item) => {
+      total += item.product.default_price.unit_amount * item.quantity;
+    });
+    setTotalPrice(total);
+  };
+
+  const handleDelete = (itemToDelete: ICartItem) => {
+    const updatedCartItems = cartItems.filter(
+      (item) => item.product.id !== itemToDelete.product.id
+    );
+    setCartItems(updatedCartItems);
+    localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+    console.log(itemToDelete.product.name, "was removed from cart");
+
+    TotalPrice(updatedCartItems);
+  };
 
   return (
     <div className="cart-container">
@@ -26,12 +47,14 @@ export const Cart = () => {
             <div className="numbers">
               <i>{item.product.default_price.unit_amount / 100}kr</i>
               <p>x {item.quantity}</p>
-              <button id="delete-btn"></button>
+              <button id="delete-btn" onClick={() => handleDelete(item)}>
+                <span className="material-symbols-outlined">delete</span>
+              </button>
             </div>
           </div>
         ))}
       </div>
-      <p id="total">Total:</p>
+      <p id="total">Total: {totalPrice / 100}kr</p>
     </div>
   );
 };

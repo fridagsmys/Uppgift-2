@@ -1,4 +1,3 @@
-import { PayBtn } from "../components/PayBtn";
 import { ProductList } from "../components/ProductList";
 
 export const Home = () => {
@@ -8,7 +7,7 @@ export const Home = () => {
   }
 
   const handleScroll2 = () => {
-    window.scrollTo(0, 4400)
+    window.scrollTo(0, 4200)
   }
   
   const handleScroll3 = () => {

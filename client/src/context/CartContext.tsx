@@ -7,7 +7,9 @@ import {
 } from "react";
 
 export interface IProduct {
-  map(arg0: (product: IProduct) => import("react/jsx-runtime").JSX.Element): import("react").ReactNode;
+  // map(
+  //   arg0: (product: IProduct) => import("react/jsx-runtime").JSX.Element
+  // ): import("react").ReactNode;
   id: string;
   name: string;
   description: string;

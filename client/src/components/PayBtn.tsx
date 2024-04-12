@@ -1,4 +1,14 @@
+import { useCart } from "../context/CartContext";
+import { useUserContext } from "../context/UserContext";
+
 export const PayBtn = () => {
+  const { cart } = useCart();
+  const {userData} = useUserContext()
+
+  const infoToSend = {
+    customerId: userData.id,
+    lineItems: cart
+  }
 
   const handlePay = async () => {
     const response = await fetch(
@@ -8,16 +18,7 @@ export const PayBtn = () => {
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify([
-          {
-            product: "price_1P2EzRP8wgatYK4XSYXIWcwK",
-            quantity: 2,
-          },
-          {
-            product: "price_1P2Ey6P8wgatYK4XHHFe73fp",
-            quantity: 1,
-          },
-        ]),
+        body: JSON.stringify(infoToSend),
       }
     );
     const data = await response.json();

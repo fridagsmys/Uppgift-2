@@ -26,6 +26,7 @@ export const Confirmation = () => {
         );
 
         const data = await response.json();
+        console.log(data)
 
         if (response.ok) {
           setVerified(data.verified);
@@ -33,9 +34,11 @@ export const Confirmation = () => {
         }
       };
       
-      localStorage.removeItem("cart");
       verifySession();
     }
+
+    localStorage.removeItem("cart");
+    
   }, [verified]);
 
   return (

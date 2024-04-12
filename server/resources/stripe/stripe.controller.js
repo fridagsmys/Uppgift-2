@@ -8,10 +8,10 @@ const createCheckoutSession = async (req, res) => {
 
   const session = await stripe.checkout.sessions.create({
     mode: "payment",
-    // customer: ,
-    line_items: cart.map((item) => {
+    customer: cart.customerId,
+    line_items: cart.lineItems.map((item) => {
       return {
-        price: item.product,
+        price: item.product.default_price.id,
         quantity: item.quantity,
       };
     }),
@@ -32,11 +32,11 @@ const verifySession = async (req, res) => {
   if (session.payment_status === "paid") {
     const lineItems = await stripe.checkout.sessions.listLineItems(sessionId);
 
-    console.log(lineItems);
+    // console.log(session);
 
     const order = {
       orderNumber: Math.floor(Math.random() * 100000000),
-      customerName: session.customer_details.name,
+      customer: session.customer,
       products: lineItems.data,
       total: session.amount_total,
       date: new Date(),
