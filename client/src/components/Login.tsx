@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 import { useUserContext } from "../context/UserContext";
 import { LoggedIn } from "./LoggedIn";
 
-export const Login = () => {
+interface ILogIn {
+  onSuccess: () => void
+}
+
+export const Login = (props: ILogIn) => {
   const { updateData } = useUserContext();
 
   const [emailInput, setEmailInput] = useState("");
@@ -50,8 +54,10 @@ export const Login = () => {
 
     if (response.status === 200) {
       updateData(contextData);
+      console.log('contextData:', contextData)
       setShowForm(false);
       localStorage.setItem("user", JSON.stringify(contextData));
+      props.onSuccess();
     }
   };
 

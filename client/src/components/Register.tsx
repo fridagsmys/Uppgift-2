@@ -4,7 +4,7 @@ import { useUserContext } from "../context/UserContext";
 import { LoggedIn } from "./LoggedIn";
 
 export const Register = () => {
-  const { userData, updateData } = useUserContext();
+  const { updateData } = useUserContext();
 
   const [nameInput, setNameInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
@@ -54,6 +54,7 @@ export const Register = () => {
 
       if (response.status === 201) {
         updateData(contextData);
+        console.log('ContextData: Register', contextData)
         setShowForm(false);
         localStorage.setItem("user", JSON.stringify(contextData));
       }
