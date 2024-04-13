@@ -7,7 +7,7 @@ This project is an online shop with Stripe integration, allowing users to place 
 Backend: Node.js/Express
 Frontend: React/Typescript
 
-This project was created by as student for educational purposes, and aims to fulfill the requirements for the grade G.
+This project was created by as student for educational purposes, and aims to fulfill the requirements for the grade G. Please note that the node_modules on both the server and client side has been removed.
 
 
 ## How to Install and Run the Project

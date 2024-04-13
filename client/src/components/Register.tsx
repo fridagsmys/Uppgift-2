@@ -4,7 +4,7 @@ import { useUserContext } from "../context/UserContext";
 import { LoggedIn } from "./LoggedIn";
 
 interface ILogIn {
-  onSuccess: () => void
+  onSuccess: () => void;
 }
 
 export const Register = (props: ILogIn) => {
@@ -58,7 +58,7 @@ export const Register = (props: ILogIn) => {
 
       if (response.status === 201) {
         updateData(contextData);
-        console.log('ContextData: Register', contextData)
+        console.log("ContextData: Register", contextData);
         setShowForm(false);
         localStorage.setItem("user", JSON.stringify(contextData));
       }
