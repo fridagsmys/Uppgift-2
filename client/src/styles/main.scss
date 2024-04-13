@@ -1,10 +1,11 @@
-@use './layout';
+@use "./layout";
 @use "./navbar";
 @use "./home";
 @use "./checkout";
 @use "./productList";
 @use "./cart";
-@use './payBtn';
+@use "./payBtn";
+@use "./confirmation";
 
 .page-container {
   width: 80%;

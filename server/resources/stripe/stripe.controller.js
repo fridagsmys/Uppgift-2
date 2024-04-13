@@ -42,9 +42,9 @@ const verifySession = async (req, res) => {
       date: new Date(),
     };
 
-    const orders = JSON.parse(await fs.readFile("./orders.json"));
+    const orders = JSON.parse(await fs.readFile("./data/orders.json"));
     orders.push(order);
-    await fs.writeFile("./orders.json", JSON.stringify(orders, null, 4));
+    await fs.writeFile("./data/orders.json", JSON.stringify(orders, null, 4));
 
     res.status(200).json({ verified: true });
   }
