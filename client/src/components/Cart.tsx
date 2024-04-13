@@ -7,7 +7,7 @@ export const Cart = () => {
   const [cartItems, setCartItems] = useState<ICartItem[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
-  const [cartEmpty, setCartEmpty] = useState<boolean>(true);
+  const [cartEmpty, setCartEmpty] = useState<boolean>(false);
 
   useEffect(() => {
     const LsData = localStorage.getItem("cart");
@@ -17,7 +17,7 @@ export const Cart = () => {
       TotalPrice(parsedData);
     } else {
       console.log("Empty local storage");
-      setCartEmpty(false);
+      setCartEmpty(true);
     }
   }, []);
 

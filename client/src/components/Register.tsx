@@ -3,7 +3,11 @@ import { useEffect, useState } from "react";
 import { useUserContext } from "../context/UserContext";
 import { LoggedIn } from "./LoggedIn";
 
-export const Register = () => {
+interface ILogIn {
+  onSuccess: () => void
+}
+
+export const Register = (props: ILogIn) => {
   const { updateData } = useUserContext();
 
   const [nameInput, setNameInput] = useState("");

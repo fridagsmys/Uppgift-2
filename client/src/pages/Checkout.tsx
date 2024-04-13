@@ -40,7 +40,7 @@ export const Checkout = () => {
     <div className="checkout-main">
       <div className="checkout-container">
         <div className="account">
-          {toggleRegister && <Register />}
+          {toggleRegister && <Register onSuccess={handleSuccsess}/>}
           {showLogin && (
             <>
               <Login onSuccess={handleSuccsess} />

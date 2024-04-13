@@ -109,5 +109,17 @@
     "name": "Bla",
     "email": "bla@gmail.com",
     "password": "$2b$10$usZRdfjJeyTegsApa.ld2elaZ67jXoDEtIyKu4G6/PCYtS8bpL3tm"
+  },
+  {
+    "id": "cus_Pv1FMTbo4mFLOQ",
+    "name": "Patrik",
+    "email": "patrik@gmail.com",
+    "password": "$2b$10$FX7MfQWl5M4UcA4OIpxS5OiBWofpx9Tc5LuZF5zbjZWBy2OVcMxQy"
+  },
+  {
+    "id": "cus_Pv1JhpsY2kJ7p5",
+    "name": "Adirf",
+    "email": "adirf@gmail.com",
+    "password": "$2b$10$LUJ346ehxucSvL.5NPgpcuug1gJfO0E7gP3o.eTEmXEIfnru4vwcC"
   }
 ]

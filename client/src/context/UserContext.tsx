@@ -1,9 +1,4 @@
-import {
-  PropsWithChildren,
-  createContext,
-  useContext,
-  useState,
-} from "react";
+import { PropsWithChildren, createContext, useContext, useState } from "react";
 
 export interface IUser {
   id: string;
@@ -28,7 +23,10 @@ export const UserContext = createContext<UserContextType>({
 });
 
 const UserProvider = ({ children }: PropsWithChildren) => {
-  const [userData, setUserData] = useState<IUser>(initialData);
+  const [userData, setUserData] = useState<IUser>(() => {
+    const LsData = localStorage.getItem("user");
+    return LsData ? JSON.parse(LsData) : "";
+  });
 
   const updateData = (newUserData: IUser) => {
     setUserData(newUserData);
