@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
-import { useUserContext } from "../context/UserContext";
 
 export const LoggedIn = () => {
-  const { userData } = useUserContext();
-
   const [name, setName] = useState('')
 
   useEffect(() => {
